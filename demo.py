@@ -52,7 +52,7 @@ if __name__ == '__main__':
     dcm_path = os.path.join(input_path, 'GRE')
     t2_path = os.path.join(input_path, 'T2.nii.gz')
     output_path = "./Results"
-    os.makedirs(output_path, exists_ok=True)
+    os.makedirs(output_path, exist_ok=True)
     t2 = nib.load(t2_path).get_fdata()
     #raw_data, voxel_size, matrix_size, CF, delta_TE, TE, affine_3D, B0_dir, B0, origin = Load(dcm_path)
     raw_data, voxel_size, matrix_size, CF, delta_TE, TE, affine_3D, B0_dir, B0, origin = Load_QSM(dcm_path)
