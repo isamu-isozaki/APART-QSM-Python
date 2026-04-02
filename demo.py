@@ -48,10 +48,11 @@ if __name__ == '__main__':
 
     # ####gpu
     device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu') 
-    input_path = r"F:\code\src_apartqsm_GPU\data"
+    input_path = "./data"
     dcm_path = os.path.join(input_path, 'GRE')
     t2_path = os.path.join(input_path, 'T2.nii.gz')
-    output_path = r"F:\code\src_apartqsm_GPU\Results"
+    output_path = "./Results"
+    os.makedirs(output_path, exists_ok=True)
     t2 = nib.load(t2_path).get_fdata()
     #raw_data, voxel_size, matrix_size, CF, delta_TE, TE, affine_3D, B0_dir, B0, origin = Load(dcm_path)
     raw_data, voxel_size, matrix_size, CF, delta_TE, TE, affine_3D, B0_dir, B0, origin = Load_QSM(dcm_path)
