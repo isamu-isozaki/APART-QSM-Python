@@ -47,7 +47,7 @@ if __name__ == '__main__':
     start0 = time.time()
 
     # ####gpu
-    device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu') 
+    device = torch.device('cpu') 
     input_path = "./data"
     dcm_path = os.path.join(input_path, 'GRE')
     t2_path = os.path.join(input_path, 'T2.nii.gz')
